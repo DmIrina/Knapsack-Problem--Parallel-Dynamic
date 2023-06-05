@@ -48,7 +48,7 @@ public class Bruteforce implements PackBackpack {
         }
         long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
-        System.out.printf("countItems = %7d  capacity = %4d -  час виконання: %12d мс\n", countItems, maxW, executionTime );
+        System.out.printf("countItems = %7d  capacity = %4d -  час виконання: %12d мс\n", countItems, maxW, executionTime);
         System.out.println("Вага = " + totalWight + " Вартість  = " + totalPrice);
     }
 
@@ -59,8 +59,8 @@ public class Bruteforce implements PackBackpack {
         int price = 0;
         for (int i = 0; i < countItems; i++) {
             if ((numberOfBit & selection) != 0) {       //  поразрядної операції "І" -
-                                                        // кожен біт у результуючому виразі буде встановлений,
-                                                        // якщо він встановлений в обох операндах.
+                // кожен біт у результуючому виразі буде встановлений,
+                // якщо він встановлений в обох операндах.
                 price += itemsWarehouse.getPrice(i);
             }
             numberOfBit <<= 1;                          // зсув вліво на 1 біт - переходимо до наступного

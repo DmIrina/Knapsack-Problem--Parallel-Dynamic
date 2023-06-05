@@ -68,32 +68,15 @@ public class ItemsWarehouse implements Serializable {
         }
     }
 
-//    public ArrayList<Item> loadItems(String filePath) {
-//        try {
-//            FileInputStream fileIn = new FileInputStream(filePath);
-//            ObjectInputStream objectIn = new ObjectInputStream(fileIn);
-//            ArrayList<Item> deserializedItems = (ArrayList<Item>) objectIn.readObject();
-//            objectIn.close();
-//            fileIn.close();
-//            return deserializedItems;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
-
     public ArrayList<Item> loadItems(String filePath) {
         try (FileInputStream fileIn = new FileInputStream(filePath);
              BufferedInputStream bufferedIn = new BufferedInputStream(fileIn);
              ObjectInputStream objectIn = new ObjectInputStream(bufferedIn)) {
-
             ArrayList<Item> deserializedItems = (ArrayList<Item>) objectIn.readObject();
             return deserializedItems;
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 

@@ -1,7 +1,5 @@
 package org.example.models;
 
-import org.example.models.ItemsWarehouse;
-
 import java.util.ArrayList;
 
 public class KnapSack {
@@ -23,7 +21,6 @@ public class KnapSack {
 
     public void printResult(ItemsWarehouse itemsWarehouse) {
         System.out.println("Зібраний рюкзак:");
-//        Collections.reverse(result);
         for (int num : packedItems) {
             itemsWarehouse.getItem(num).printItem();
         }

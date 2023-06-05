@@ -10,9 +10,9 @@ public class Item implements Serializable {
 
     public Item(int id, String name, int weight, int price) {
         this.id = id;
-        this.name=name;
-        this.price=price;
-        this.weight=weight;
+        this.name = name;
+        this.price = price;
+        this.weight = weight;
     }
 
     public int getId() {

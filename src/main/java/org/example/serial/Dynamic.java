@@ -10,7 +10,6 @@ public class Dynamic implements PackBackpack {
     private int countItems;
     private int capacity;           // max weight of knapsack
 
-
     public Dynamic(ItemsWarehouse itemsWarehouse, int capacity) {
         this.itemsWarehouse = itemsWarehouse;
         countItems = itemsWarehouse.getItems().size();
@@ -19,7 +18,7 @@ public class Dynamic implements PackBackpack {
 
     @Override
     public void pack() {
- //       System.out.println("\nПослідовна реалізація алгоритму пакування рюкзака методом динамічного програмування:");
+        // System.out.println("\nПослідовна реалізація алгоритму пакування рюкзака методом динамічного програмування:");
         long startTime = System.currentTimeMillis();
 
         int[][] dt = new int[countItems + 1][capacity + 1];         // таблиця динамічного програмування
@@ -45,8 +44,8 @@ public class Dynamic implements PackBackpack {
         KnapSack knapSack = Helper.findSelectedItems(dt, itemsWarehouse, capacity);
         long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
-//        System.out.printf("Послідовна:                items = %7d  capacity = %4d   час виконання: %12d мс\n", countItems, capacity, executionTime);
+
         System.out.printf(" Послідовна                %7d          %4d          %12d\n", countItems, capacity, executionTime);
-        knapSack.printResult(itemsWarehouse);
+        // knapSack.printResult(itemsWarehouse);
     }
 }

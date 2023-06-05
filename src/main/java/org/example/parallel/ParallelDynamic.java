@@ -27,9 +27,7 @@ public class ParallelDynamic implements PackBackpack {
 
     @Override
     public void pack() {
-
- //       System.out.println("\nПаралельна реалізація алгоритму пакування рюкзака");
-
+        // System.out.println("\nПаралельна реалізація алгоритму пакування рюкзака");
         // Створення пулу потоків для виконання паралельних обчислень
         ExecutorService pool = Executors.newFixedThreadPool(numThreads);
 
@@ -74,7 +72,7 @@ public class ParallelDynamic implements PackBackpack {
         long endTime = System.currentTimeMillis();
         long executionTime = endTime - startTime;
         System.out.printf(" Паралельна       %2d       %7d          %4d          %12d\n", numThreads, countItems, capacity, executionTime);
-        knapSack.printResult(itemsWarehouse);   // друк змісту рюкзака
+        //      knapSack.printResult(itemsWarehouse);   // друк змісту рюкзака
     }
 
     private void calculate(int[][] dt, CountDownLatch latch, int itemIndex, int partLeftIndex, int partRightIndex) {
